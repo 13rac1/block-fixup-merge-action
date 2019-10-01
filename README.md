@@ -24,3 +24,8 @@ jobs:
     - name: Block Fixup Merge
       uses: 13rac1/block-fixup-merge-action@master
 ```
+
+Optionally, setup Branch Protection to block merging of PRs against the `master`
+branch with `!fixup` commits.
+
+[![PR merge blocked](images/block-fixup-example.png?raw=true)](images/block-fixup-example.png?raw=true)
