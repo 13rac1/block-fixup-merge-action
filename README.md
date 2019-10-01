@@ -24,6 +24,7 @@ jobs:
     runs-on: ubuntu-18.04
 
     steps:
+    - uses: actions/checkout@master
     - name: Block Fixup Merge
       uses: 13rac1/block-fixup-merge-action@master
 ```
