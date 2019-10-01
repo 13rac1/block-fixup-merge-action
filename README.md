@@ -1,4 +1,4 @@
-# Block Fixup Merge Action
+# Block fixup commit merge Action
 
 Love using `git commit --fixup` to make minor cleanups to your Git history, but
 forget to `git rebase -i --autosquash master` before merging?

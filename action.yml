@@ -1,5 +1,5 @@
-name: 'Block Fixup Merge'
-description: 'Blocks merge of Pull Requests while fixup commits exist'
+name: 'Block fixup commit merge'
+description: 'Block merge of Pull Requests containing fixup commits, so you do not forget to squash/autosquash.'
 author: 'Brad Erickson'
 runs:
   using: 'docker'
