@@ -5,6 +5,9 @@ forget to `git rebase -i --autosquash master` before merging?
 
 Have I got a Github Action for you!
 
+Example PR blocked by a `fixup!` commit:
+https://github.com/13rac1/block-fixup-merge-action/pull/1
+
 ## Setup
 
 Create a file in your project named: `.github/workflows/git.yml`
