@@ -1,0 +1,9 @@
+name: 'Block Fixup Merge'
+description: 'Blocks merge of Pull Requests while fixup commits exist'
+author: 'Brad Erickson'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'scissors'
+  color: 'orange'
