@@ -8,15 +8,15 @@ main() {
 
   # Using git directly because the $GITHUB_EVENT_PATH file only shows commits in
   # most recent push.
-  git fetch --no-tags --prune --depth=1 origin master
-  git fetch --no-tags --prune --shallow-exclude=master origin ${BRANCH}
+  /usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin master
+  /usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --shallow-exclude=master origin ${BRANCH}
 
   # Get the list before the "|| true" to fail the script when the git cmd fails.
-  FIXUP_LIST=`git log --pretty=format:%s origin/master..origin/${BRANCH}`
+  FIXUP_LIST=`/usr/bin/git log --pretty=format:%s origin/master..origin/${BRANCH}`
   FIXUP_COUNT=`echo $FIXUP_LIST | grep fixup! | wc -l || true`
   echo "Fixup! commits: ${FIXUP_COUNT}"
   if [ "$FIXUP_COUNT" -gt "0" ]; then
-    git log --pretty=format:%s origin/master..origin/${BRANCH} | grep fixup!
+    /usr/bin/git log --pretty=format:%s origin/master..origin/${BRANCH} | grep fixup!
     echo "failing..."
     exit 1
   fi
