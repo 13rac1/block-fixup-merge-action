@@ -7,7 +7,8 @@ Have I got a Github Action for you!
 
 ## Setup
 
-Create a file in your project named: `.github/workflows/git.yml` Add the following:
+Create a file in your project named: `.github/workflows/git.yml` Add the
+following:
 
 ```yaml
 name: Git Checks
@@ -19,7 +20,7 @@ jobs:
     runs-on: ubuntu-18.04
 
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@0b496e91
     - name: Block Fixup Commit Merge
       uses: 13rac1/block-fixup-merge-action@v1.0.0
 ```
@@ -30,8 +31,8 @@ branch with `!fixup` commits.
 [Example PR blocked by a `fixup!` commit:][example-pr]
 
 [example-pr]:https://github.com/13rac1/block-fixup-merge-action/pull/1
-[![PR merge
-blocked](images/block-fixup-example.png?raw=true)](images/block-fixup-example.png?raw=true)
+
+[![PR merge blocked](images/block-fixup-example.png?raw=true)](images/block-fixup-example.png?raw=true)
 
 ## Why
 
@@ -42,8 +43,9 @@ to add additional fix/update commits, including commit message titles such as
 
 Git commits are the historical record of project. The commit messages tell a
 story, each commit or Pull Request describing a change. FutureYou™ and
-CurrentYouCoWorkers™ needs to know the end result of each change, but no one
-cares about edits required to make that change. We just want to read the book, no one cares what the editor told the author while writing the book.
+CurrentCoWorkers™ needs to know the end result of each change, but no one
+cares about edits required to make that change. We just want to read the book,
+no one cares what the editor told the author while writing the book.
 
 One solution is to use Github's "Squash merge" feature. This works well for
 small PRs. A few small commits can be squashed into a single commit. The "edits"
