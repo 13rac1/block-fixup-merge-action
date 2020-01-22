@@ -22,7 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2.0.0
     - name: Block Fixup Commit Merge
-      uses: 13rac1/block-fixup-merge-action@v1.1.0
+      uses: 13rac1/block-fixup-merge-action@v1.1.1
 ```
 
 Optionally, setup Branch Protection to block merging of PRs against the `master`
