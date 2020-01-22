@@ -20,9 +20,9 @@ jobs:
     runs-on: ubuntu-18.04
 
     steps:
-    - uses: actions/checkout@0b496e91
+    - uses: actions/checkout@v2.0.0
     - name: Block Fixup Commit Merge
-      uses: 13rac1/block-fixup-merge-action@v1.0.0
+      uses: 13rac1/block-fixup-merge-action@v1.1.0
 ```
 
 Optionally, setup Branch Protection to block merging of PRs against the `master`
