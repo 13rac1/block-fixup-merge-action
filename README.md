@@ -1,9 +1,21 @@
-# Block fixup commit merge Action
+# Block Fixup Commit Merge Action
 
-Love using `git commit --fixup` to make minor cleanups to your Git history, but
-forget to `git rebase -i --autosquash master` before merging?
+Love using `git commit --fixup` to make cleanups to your Git history, especially
+during Code Reviews, but forget to `git rebase -i --autosquash master` before
+merging?
 
 Have I got a Github Action for you!
+
+This Action is as an assistant to be sure your squash fixup commits before
+merging to your main branch.
+
+## Background
+
+* [The Git fixup workflow](https://dev.to/koffeinfrei/the-git-fixup-workflow-386d)
+* [Git commit fixup and autosquash](https://blog.sebastian-daschner.com/entries/git-commit-fixup-autosquash)
+* [GIT tip : Keep your branch clean with fixup and autosquash](https://fle.github.io/git-tip-keep-your-branch-clean-with-fixup-and-autosquash.html)
+* [You should use rebase/fixup in IntelliJ IDEA more often](https://augustl.com/blog/2019/using_rebase_fixup_in_intellij_idea/) - Applicable to any use of git.
+* [Fixup your Code Reviews with git rebase --autosquash](https://rietta.com/blog/git-rebase-autosquash-code-reviews/)
 
 ## Setup
 
@@ -77,6 +89,24 @@ is:
 
 Note: Rebasing is still allowed for the entire branch to integrate `master`
 branch changes as needed.
+
+## FAQ
+
+### When using as a required check of a Pull Request, how can it ever succeed once it fails?
+
+A final squash and force push is required to clear the check failure before merge.
+
+The historical unsuccessful check does not block the merge. Only the most recent
+Action run matters. Once the code review has been completed, the Pull Request
+approved, and all other Actions/Checks (Travis/Circle/Jenkins) pass, the final
+step is cleaning the history by applying the fixup commits:
+
+```bash
+git rebase -i --autosquash
+git push origin HEAD -f
+```
+
+Then all checks re-run, and you can merge the Pull Request.
 
 ## License
 
