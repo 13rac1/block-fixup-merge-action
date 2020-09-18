@@ -1,12 +1,12 @@
 # Block Fixup Commit Merge Action
 
-Love using `git commit --fixup` to make cleanups to your Git history, especially
-during Code Reviews, but forget to `git rebase -i --autosquash master` before
+Love using `git commit --fixup` or `git commit --squash` to make cleanups to
+your Git history, but forget to `git rebase -i --autosquash master` before
 merging?
 
 Have I got a Github Action for you!
 
-This Action is as an assistant to be sure your squash fixup commits before
+This Action is as an assistant to be sure you squash fixup commits before
 merging to your main branch.
 
 ## Background
