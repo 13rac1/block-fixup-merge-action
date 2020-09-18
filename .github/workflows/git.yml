@@ -8,5 +8,5 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2.0.0 # Always pin
-    - name: Block Fixup Merge
+    - name: Block Fixup/Squash Merge
       uses: 13rac1/block-fixup-merge-action@master

@@ -4,6 +4,12 @@ set -o pipefail
 
 main() {
   echo "Current ref: ${GITHUB_REF}"
+
+  if [[ "$GITHUB_REF" != "refs/heads/"* ]]; then
+    echo "Only check branches, not tags or other refs."
+    exit 0
+  fi
+
   BRANCH=${GITHUB_REF:11}
   echo "Current branch: ${BRANCH}"
 
