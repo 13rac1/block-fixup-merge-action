@@ -38,7 +38,7 @@ jobs:
 ```
 
 Optionally, setup Branch Protection to block merging of PRs against the `master`
-branch with `!fixup` commits.
+branch with `fixup!` commits.
 
 [Example PR blocked by a `fixup!` commit:][example-pr]
 
