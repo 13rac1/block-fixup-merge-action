@@ -35,6 +35,14 @@ main() {
     echo "failing..."
     exit 1
   fi
+
+  FUTURE_COUNT=`echo $COMMIT_LIST | grep future! | wc -l || true`
+  echo "Future! commits: $FUTURE_COUNT"
+  if [[ "$FUTURE_COUNT" -gt "0" ]]; then
+    /usr/bin/git log --pretty=format:%s __ci_base..__ci_pr | grep future!
+    echo "failing..."
+    exit 1
+  fi
 }
 
 main
