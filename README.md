@@ -1,4 +1,4 @@
-# Block Fixup Commit Merge Action
+# Block WIP PR Action
 
 Love using `git commit --fixup` or `git commit --squash` to make cleanups to
 your Git history, but forget to `git rebase -i --autosquash master` before
