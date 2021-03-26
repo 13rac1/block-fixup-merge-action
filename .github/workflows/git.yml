@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-18.04
 
     steps:
-    - uses: actions/checkout@v1.0.0 # Always pin
+    - uses: actions/checkout@v1.1.0 # Always pin
     - name: Block WIP PR
       uses: samholmes/block-wip-pr-action@master
