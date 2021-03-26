@@ -1,9 +1,9 @@
 name: 'Block WIP PR'
 description: 'Block merge of Pull Requests containing work-in-progress commits, so you do not forget to rebase.'
-author: 'Brad Erickson'
+author: 'Sam Holmes'
 runs:
   using: 'docker'
   image: 'Dockerfile'
 branding:
-  icon: 'scissors'
-  color: 'orange'
+  icon: 'x-octagon'
+  color: 'purple'
