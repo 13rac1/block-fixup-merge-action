@@ -1,13 +1,10 @@
 # Block WIP PR Action
 
-Love using `git commit --fixup` or `git commit --squash` to make cleanups to
-your Git history, but forget to `git rebase -i --autosquash master` before
-merging?
+_This is a fork of [Block Fixup Commit Merge Action](https://github.com/13rac1/block-fixup-merge-action)_
 
-Have I got a Github Action for you!
-
-This Action is as an assistant to be sure you squash fixup commits before
-merging to your main branch.
+This action will block PRs containing `fixup!`, `squash!`, and any merge commits
+(aka future commits). This action is as an assistant to be sure you 
+rebase/autosquash your feature branch before merging to your main branch.
 
 ## Background
 
@@ -16,6 +13,7 @@ merging to your main branch.
 * [GIT tip : Keep your branch clean with fixup and autosquash](https://fle.github.io/git-tip-keep-your-branch-clean-with-fixup-and-autosquash.html)
 * [You should use rebase/fixup in IntelliJ IDEA more often](https://augustl.com/blog/2019/using_rebase_fixup_in_intellij_idea/) - Applicable to any use of git.
 * [Fixup your Code Reviews with git rebase --autosquash](https://rietta.com/blog/git-rebase-autosquash-code-reviews/)
+* [Git "Future Commit" Workflow](https://github.com/EdgeApp/edge-conventions/blob/master/git-future-commit-workflow.md)
 
 ## Setup
 
@@ -28,13 +26,13 @@ name: Git Checks
 on: [pull_request]
 
 jobs:
-  block-fixup:
+  block-wip-pr:
     runs-on: ubuntu-18.04
 
     steps:
     - uses: actions/checkout@v2.0.0
     - name: Block Fixup Commit Merge
-      uses: 13rac1/block-fixup-merge-action@v2.0.0
+      uses: samholmes/block-wip-pr-action@v1.1.0
 ```
 
 Optionally, setup Branch Protection to block merging of PRs against the `master`
