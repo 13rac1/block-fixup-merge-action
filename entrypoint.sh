@@ -15,7 +15,7 @@ main() {
 
   # Using git directly because the $GITHUB_EVENT_PATH file only shows commits in
   # most recent push.
-  /usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin "${BASE_REF}:__ci_base"
+  /usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=500 origin "${BASE_REF}:__ci_base"
   /usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules origin "${PR_REF}:__ci_pr"
   # Get the list before the "|| true" to fail the script when the git cmd fails.
   COMMIT_LIST=`/usr/bin/git log --pretty=format:'%s %h <- %p ' __ci_base..__ci_pr`
