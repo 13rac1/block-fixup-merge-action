@@ -20,7 +20,7 @@ main() {
   # Get the list before the "|| true" to fail the script when the git cmd fails.
   COMMIT_LIST=`/usr/bin/git log --pretty=format:%s __ci_base..__ci_pr`
 
-  FIXUP_COUNT=`echo $COMMIT_LIST | grep fixup! | wc -l || true`
+  FIXUP_COUNT=`echo $COMMIT_LIST | grep -E 'fixup!|amend!' | wc -l || true`
   echo "Fixup! commits: $FIXUP_COUNT"
   if [[ "$FIXUP_COUNT" -gt "0" ]]; then
     /usr/bin/git log --pretty=format:%s __ci_base..__ci_pr | grep fixup!
